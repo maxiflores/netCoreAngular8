@@ -1,0 +1,81 @@
+<h3>Products list</h3>
+
+<form [formGroup]="formGroup">
+  <div class="card mb-3">
+    <div class="card-body">
+      <div class="row mb-2">
+        <div class="col-sm-4">
+          <label>Description</label>
+          <input class="form-control" formControlName="description" type="text" />
+        </div>
+
+        <div class="col-sm-3">
+          <label>Category</label>
+          <select class="form-control" formControlName="categoryId" #categoryId>
+            <option value="0">Select</option>
+            <option *ngFor="let cat of catergories" value="{{cat.id}}">{{cat.categoryName}}</option>
+          </select>
+        </div>
+
+        <div class="col-sm-3">
+          <label>Sub Category</label>
+          <select class="form-control" formControlName="subCategoryId" #subCategoryId>
+            <option value="0">Select</option>
+            <option *ngFor="let cat of subCatergories" value="{{cat.id}}">{{cat.subCategoryName}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-sm-9">
+          <button class="btn btn-md btn-success" type="button" (click)="newProduct()">Add</button>
+          <button class="btn btn-md btn-outline-secondary" type="button" (click)="filter()">Filter</button>
+        </div>
+        <div class="col-sm-3 float-right">
+          <button class="btn btn-md btn-outline-secondary" type="button" (click)="reload()">Refresh</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <table class='table'>
+        <thead>
+          <tr class="table-active">
+            <th>Code</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Sub Category</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prod of products">
+            <td>{{ prod.code }}</td>
+            <td>{{ prod.description }}</td>
+            <td>{{ prod.category }}</td>
+            <td>{{ prod.subCategory }}</td>
+            <td>{{ prod.price }}</td>
+            <td>
+              <div *ngIf="prod.status; then active; else inactive"></div>
+              <ng-template #active>
+                Active
+              </ng-template>
+              <ng-template #inactive>
+                Inactive
+              </ng-template>
+            </td>
+            <td>
+              <button type="button" class="btn btn-default" data-toggle="tooltip" title="Edit Product" [routerLink]="['/edit', prod.id]"><i class="fas fa-edit"></i></button>
+              <!--<div >-->
+              <button *ngIf="prod.status" type="button" class="btn btn-default" (click)="delete(prod.id)" data-toggle="tooltip" title="Inactive"><i class="far fa-trash-alt"></i></button>
+              <button *ngIf="!prod.status" type="button" class="btn btn-default" (click)="delete(prod.id)" data-toggle="tooltip" title="Active"><i class="fas fa-retweet"></i></button>
+              <!--</div>-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</form>

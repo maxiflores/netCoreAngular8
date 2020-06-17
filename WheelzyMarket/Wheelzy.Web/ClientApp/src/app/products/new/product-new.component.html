@@ -1,0 +1,45 @@
+<h3>Product</h3>
+
+
+<div class="card col-sm-4">
+  <div class="card-body">
+    <form [formGroup]="formGroup" novalidate (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+        <label>Code</label>
+        <input type="text" class="form-control" formControlName="code" #code />
+      </div>
+      <div class="col-sm-12">
+        <label>Desciption</label>
+        <input type="text" class="form-control" formControlName="description" #description />
+      </div>
+      <div class="col-sm-12">
+        <label>Category</label>
+        <select class="form-control" (change)="onChange($event.target.value)" formControlName="categoryId" #categoryId>
+          <option>Select</option>
+          <option *ngFor="let cat of catergories" value="{{cat.id}}">{{cat.categoryName}}</option>
+        </select>
+      </div>
+      <div class="col-sm-12">
+        <label>Sub Category</label>
+        <select class="form-control" formControlName="subCategoryId" #subCategoryId>
+          <option>Select</option>
+          <option *ngFor="let cat of subCatergoriesFilter" value="{{cat.id}}">{{cat.subCategoryName}}</option>
+        </select>
+      </div>
+      <div class="col-sm-12">
+        <label>Price ($)</label>
+        <input type="text" class="form-control" formControlName="price" #price />
+      </div>
+      <div class="col-sm-12 float-center">
+        <input class="form-check-input" type="checkbox" formControlName="status" #status>
+        <label class="form-check-label">Status</label>
+      </div>
+      <div class="col-sm-12 ">
+        <button class="btn btn-md btn-outline-secondary float-right" type="button" (click)="cancel()">Cancel</button>
+        <button class="btn btn-md btn-success float-right" type="submit"
+                [disabled]="formGroup.invalid">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+

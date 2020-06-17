@@ -1,0 +1,71 @@
+<h3>Orders</h3>
+
+<div class="card mb-3">
+  <div class="card-body">
+    <div class="card-header text-center">
+      Products availables
+    </div>
+    <table class='table'>
+      <thead>
+        <tr class="table-active">
+          <th>Code</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Sub Category</th>
+          <th>Price</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prod of products">
+          <td>{{ prod.code }}</td>
+          <td>{{ prod.description }}</td>
+          <td>{{ prod.category }}</td>
+          <td>{{ prod.subCategory }}</td>
+          <td>{{ prod.price }}</td>
+          
+          <td>
+            <button type="button" class="btn btn-default" data-toggle="tooltip" title="Add to order" (click)="addToOrder(prod.id)"><i class="fas fa-plus"></i></button>
+           
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  <div class="card">
+    <div class="card-body">
+      <div class="card-header text-center">
+        Order
+      </div>
+      <table class='table'>
+        <thead>
+          <tr class="table-active">
+            <th>Code</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Sub Category</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prod of prodctOrder">
+            <td>{{ prod.code }}</td>
+            <td>{{ prod.description }}</td>
+            <td>{{ prod.category }}</td>
+            <td>{{ prod.subCategory }}</td>
+            <td>{{ prod.price }}</td>
+            <td>{{ prod.quantity }}</td>
+            <td>
+              <button type="button" class="btn btn-default" data-toggle="tooltip" title="Remove to order" (click)="removeToOrder(prod.id)"><i class="fas fa-minus"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-md btn-outline-secondary float-right"
+              type="button" (click)="completeOrder()">Complete Order</button>
+    </div>
+  </div>

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wheelzy.Models", "Wheelzy.Models\Wheelzy.Models.csproj", "{38A2478A-5B77-4B14-BA47-3F07EAC45D13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wheelzy.Repository", "Wheelzy.Repository\Wheelzy.Repository.csproj", "{37CA8CCF-26E5-465C-A971-276235BAA590}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wheelzy.Services", "Wheelzy.Services\Wheelzy.Services.csproj", "{BD1D50F3-6291-4966-BB50-3510E797C8D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wheelzy.Web", "Wheelzy.Web\Wheelzy.Web.csproj", "{75CCB510-461E-4246-B374-1D1420311F3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38A2478A-5B77-4B14-BA47-3F07EAC45D13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A2478A-5B77-4B14-BA47-3F07EAC45D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A2478A-5B77-4B14-BA47-3F07EAC45D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A2478A-5B77-4B14-BA47-3F07EAC45D13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37CA8CCF-26E5-465C-A971-276235BAA590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37CA8CCF-26E5-465C-A971-276235BAA590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37CA8CCF-26E5-465C-A971-276235BAA590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37CA8CCF-26E5-465C-A971-276235BAA590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD1D50F3-6291-4966-BB50-3510E797C8D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD1D50F3-6291-4966-BB50-3510E797C8D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD1D50F3-6291-4966-BB50-3510E797C8D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD1D50F3-6291-4966-BB50-3510E797C8D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75CCB510-461E-4246-B374-1D1420311F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75CCB510-461E-4246-B374-1D1420311F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75CCB510-461E-4246-B374-1D1420311F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75CCB510-461E-4246-B374-1D1420311F3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39FB4924-B16D-43D1-B9FF-D5A7C8209F30}
+	EndGlobalSection
+EndGlobal
